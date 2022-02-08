@@ -1,3 +1,4 @@
+import 'package:alimente/Screens/cart_screen.dart';
 import 'package:alimente/Screens/restaurant_screen.dart';
 import 'package:alimente/models/restaurant.dart';
 import 'package:alimente/widgets/rating_stars.dart';
@@ -35,11 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
-                  child: Image(
-                    height: 130.0,
-                    width: 120.0,
-                    image: AssetImage(restaurant.imageUrl),
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: restaurant.imageUrl,
+                    child: Image(
+                      height: 130.0,
+                      width: 120.0,
+                      image: AssetImage(restaurant.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 Container(
@@ -51,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         restaurant.name,
                         style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -104,7 +108,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Center(child: Text('Food Delivery')),
         actions: <Widget>[
           FlatButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CartScreen(),
+              ),
+            ),
             child: Text(
               "Cart (${currentUser.cart.length})",
               style: TextStyle(

@@ -45,15 +45,15 @@ final _restaurant2 = Restaurant(
 );
 final _restaurant3 = Restaurant(
   imageUrl: 'assets/images/restaurant3.jpg',
-  name: 'Restaurant 3',
-  address: '200 Main St, New York, NY',
+  name: 'The Carnivore',
+  address: 'Langata Road, Nairobi',
   rating: 2,
   menu: [_burrito, _steak, _burger, _pizza, _salmon],
 );
 final _restaurant4 = Restaurant(
   imageUrl: 'assets/images/restaurant4.jpg',
-  name: 'For You Chinese Restaurant',
-  address: '200 Main St, New York, NY',
+  name: 'For You Chinese',
+  address: 'Valley Archade,Nairobi',
   rating: 3,
   menu: [_burrito, _ramen, _pancakes, _salmon],
 );
